@@ -1,4 +1,4 @@
-# SnyderApps Tye ABP monorepo
+# SnyderApps (Tye ABP Angular) monorepo
 
 This is a template project based on [eShopOnAbp](https://github.com/abpframework/eShopOnAbp) with minimal configuration
 and services, ready to be used as a template to create new, fresh, microservices architectures.
