@@ -9,13 +9,10 @@ if (! (  Test-Path ".\etc\dev-cert\localhost.pfx" -PathType Leaf ) ){
 }
 
 <# Check Docker containers #>
-docker network create eshoponabp-network
+docker network create snyder-apps-network
 
-$requiredServices = @(
-	'postgres-db',
-	'rabbitmq',
-	'redis'
-)
+<# Add Required services infrastructure information here #>
+$requiredServices = @()
 	
 foreach ($requiredService in $requiredServices) {	
 
@@ -30,12 +27,11 @@ foreach ($requiredService in $requiredServices) {
 	else
 	{
 	    cd "./etc/docker/"
-		docker-compose -f docker-compose.infrastructure.yml -f docker-compose.infrastructure.override.yml up -d
+		<# Execute any docker-compose override here #>
 		cd ../..
 		break;
 	}
 }
- 
 
 <# Run all services #>
 

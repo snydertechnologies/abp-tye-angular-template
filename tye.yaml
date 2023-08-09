@@ -1,107 +1,24 @@
-name: EShopOnAbp
+name: SnyderApps
 services:
-# - name: auth-server
-#   project: apps/auth-server/src/EShopOnAbp.AuthServer/EShopOnAbp.AuthServer.csproj
-#   bindings:
-#     - protocol: https
-#       port: 44330
-#   env:
-#     - Kestrel__Certificates__Default__Path=../../../../etc/dev-cert/localhost.pfx
-#     - Kestrel__Certificates__Default__Password=8b6039b6-c67a-448b-977b-0ce6d3fcfd49
-
-- name: identity-service
-  project: services/identity/src/EShopOnAbp.IdentityService.HttpApi.Host/EShopOnAbp.IdentityService.HttpApi.Host.csproj
+- name: web-angular
+  dockerFile: apps/angular/Dockerfile
   bindings:
-    - protocol: https
-      port: 44351
-  env:
-    - Kestrel__Certificates__Default__Path=../../../../etc/dev-cert/localhost.pfx
-    - Kestrel__Certificates__Default__Password=8b6039b6-c67a-448b-977b-0ce6d3fcfd49
-
-- name: administration-service
-  project: services/administration/src/EShopOnAbp.AdministrationService.HttpApi.Host/EShopOnAbp.AdministrationService.HttpApi.Host.csproj
-  bindings:
-    - protocol: https
-      port: 44353
-  env:
-    - Kestrel__Certificates__Default__Path=../../../../etc/dev-cert/localhost.pfx
-    - Kestrel__Certificates__Default__Password=8b6039b6-c67a-448b-977b-0ce6d3fcfd49
-
-- name: catalog-service
-  project: services/catalog/src/EShopOnAbp.CatalogService.HttpApi.Host/EShopOnAbp.CatalogService.HttpApi.Host.csproj
-  bindings:
-    - protocol: https
-      port: 44354
-  env:
-    - Kestrel__Certificates__Default__Path=../../../../etc/dev-cert/localhost.pfx
-    - Kestrel__Certificates__Default__Password=8b6039b6-c67a-448b-977b-0ce6d3fcfd49
-
-- name: basket-service
-  project: services/basket/src/EShopOnAbp.BasketService/EShopOnAbp.BasketService.csproj
-  bindings:
-    - protocol: https
-      port: 44355
-  env:
-    - Kestrel__Certificates__Default__Path=../../../../etc/dev-cert/localhost.pfx
-    - Kestrel__Certificates__Default__Password=8b6039b6-c67a-448b-977b-0ce6d3fcfd49
-
-- name: ordering-service
-  project: services/ordering/src/EShopOnAbp.OrderingService.HttpApi.Host/EShopOnAbp.OrderingService.HttpApi.Host.csproj
-  bindings:
-    - protocol: https
-      port: 44356
-  env:
-    - Kestrel__Certificates__Default__Path=../../../../etc/dev-cert/localhost.pfx
-    - Kestrel__Certificates__Default__Password=8b6039b6-c67a-448b-977b-0ce6d3fcfd49
-
-- name: payment-service
-  project: services/payment/src/EShopOnAbp.PaymentService.HttpApi.Host/EShopOnAbp.PaymentService.HttpApi.Host.csproj
-  bindings:
-    - protocol: https
-      port: 44357
-  env:
-    - Kestrel__Certificates__Default__Path=../../../../etc/dev-cert/localhost.pfx
-    - Kestrel__Certificates__Default__Password=8b6039b6-c67a-448b-977b-0ce6d3fcfd49
-  env_file:
-    - ./.env  
-  
-- name: cmskit-service
-  project: services/cmskit/src/EShopOnAbp.CmskitService.HttpApi.Host/EShopOnAbp.CmskitService.HttpApi.Host.csproj
-  bindings:
-    - protocol: https
-      port: 44358
-  env:
-    - Kestrel__Certificates__Default__Path=../../../../etc/dev-cert/localhost.pfx
-    - Kestrel__Certificates__Default__Password=8b6039b6-c67a-448b-977b-0ce6d3fcfd49
-  env_file:
-    - ./.env 
-
+    - port: 80
+    
 - name: web-gateway
-  project: gateways/web/src/EShopOnAbp.WebGateway/EShopOnAbp.WebGateway.csproj
+  project: gateways\web\src\SnyderApps.WebGateway\SnyderApps.WebGateway.csproj
   bindings:
     - protocol: https
-      port: 44372
-  env:
-    - Kestrel__Certificates__Default__Path=../../../../etc/dev-cert/localhost.pfx
-    - Kestrel__Certificates__Default__Password=8b6039b6-c67a-448b-977b-0ce6d3fcfd49  
-
-- name: web-public-gateway
-  project: gateways/web-public/src/EShopOnAbp.WebPublicGateway/EShopOnAbp.WebPublicGateway.csproj
-  bindings:
-    - protocol: https
-      port: 44373
+      port: 5000
   env:
     - Kestrel__Certificates__Default__Path=../../../../etc/dev-cert/localhost.pfx
     - Kestrel__Certificates__Default__Password=8b6039b6-c67a-448b-977b-0ce6d3fcfd49
 
-- name: public-web
-  project: apps/public-web/src/EShopOnAbp.PublicWeb/EShopOnAbp.PublicWeb.csproj
+- name: base-service
+  project: services\base-service\src\SnyderApps.BaseService.Client\SnyderApps.BaseService.Client.csproj
   bindings:
     - protocol: https
-      port: 44335
+      port: 5002
   env:
     - Kestrel__Certificates__Default__Path=../../../../etc/dev-cert/localhost.pfx
-    - Kestrel__Certificates__Default__Password=8b6039b6-c67a-448b-977b-0ce6d3fcfd49
-
-- name: keycloak-seeder
-  project: shared/EShopOnAbp.Keycloak.DbMigrator/EShopOnAbp.Keycloak.DbMigrator.csproj    
+    - Kestrel__Certificates__Default__Password=8b6039b6-c67a-448b-977b-0ce6d3fcfd49    

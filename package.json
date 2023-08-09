@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "angular": "ng serve --port 1337 apps/angular"
+  },
   "dependencies": {
     "@ngxs/store": "^3.7.3"
   }

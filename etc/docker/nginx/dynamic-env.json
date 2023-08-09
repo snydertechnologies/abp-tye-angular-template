@@ -1,13 +1,13 @@
 {
   "production": true,
   "application": {
-    "baseUrl":"https://eshop-st-web",
+    "baseUrl":"https://base-service",
     "name": "EShopOnAbp",
     "logoUrl": ""
   },
   "oAuthConfig": {
-    "issuer": "https://eshop-st-authserver",
-    "redirectUri": "https://eshop-st-web",
+    "issuer": "https://base-service",
+    "redirectUri": "https://base-service",
     "clientId": "Web",
     "responseType": "code",
     "scope": "offline_access openid profile email phone AccountService IdentityService AdministrationService CatalogService OrderingService",
@@ -16,7 +16,7 @@
   },
   "apis": {
     "default": {
-      "url": "https://eshop-st-gateway-web",
+      "url": "https://base-service",
       "rootNamespace": "EShopOnAbp"
     }
   }

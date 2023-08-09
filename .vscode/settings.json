@@ -1,0 +1,3 @@
+{
+    "dotnet.defaultSolution": "services/base-service/SnyderApps.BaseService.sln"
+}

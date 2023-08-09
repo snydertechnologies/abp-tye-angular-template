@@ -1,14 +1,13 @@
-# eShopOnAbp
+# SnyderApps Tye ABP monorepo
 
-This project is a reference project for those who want to build microservice solutions with the ABP Framework.
+This is a template project based on [eShopOnAbp](https://github.com/abpframework/eShopOnAbp) with minimal configuration
+and services, ready to be used as a template to create new, fresh, microservices architectures.
 
-See [the announcement](https://blog.abp.io/abp/Introducing-the-eShopOnAbp-Project) post for more info.
+Currently the Tye runner contains the following features:
 
-Live demo is on https://www.eshoponabp.com/
-
-## Issues
-
-Please open issues on the main GitHub repository: https://github.com/abpframework/abp/issues
+- **Angular** application;
+- Example service as ABP Framework module;
+- Example service gateway using YARP;
 
 ## How to Run?
 
@@ -23,11 +22,8 @@ You can either run in Visual Studio, or using [Microsoft Tye](https://github.com
 ### Instructions
 
 - Clone the repository ( [eShopOnAbp](https://github.com/abpframework/eShopOnAbp) )
-
 - Install Tye (*follow [these steps](https://github.com/dotnet/tye/blob/main/docs/getting_started.md#installing-tye)*)
-
-- Rename `.env.example` file to `.env` file and provide PayPal ClientID and Secret.
-
+- Rename `.env.example` file to `.env`.
 - Execute `run-tye.ps1`
 
 - Wait until all applications are up!
@@ -56,39 +52,4 @@ If the cerficiate is expired you'll see following error:
 Generating a new certificate will fix that issue. To generate new one,
 
 - Remove `etc/dev-cert/localhost.pfx`
-
 - Manually execute `create-certificate.ps1` **or** re-run solution with `run-tye.ps1`
-
-
-## Roadmap
-### Version 1.0
-
-- [x] New blank micro-service solution ✔️
-- [x] Creating Deployment Scenarios ✔️
-- [x] Creating empty business services ✔️
-- [x] Implementing	 business logic into services ✔️
-  - [x] Payment with PayPal ✔️
-  - [x] Basket, Catalog, Order Service ✔️
-- [x] Docker Image creation ✔️
-- [x] Helm deployment for local k8s cluster ✔️
-- [x] Switch Ocelot to <strike>Envoy</strike> YARP in Public Web gateway ✔️
-- [x] Use gRPC for catalog microservice ✔️
-- [x] Management Side of Services ✔️
-- [x] Administration application (to manage products and orders, with a dashboard) ✔️
-- [x] Deployment to azure k8s ✔️ (https://eshoponabp.com)
-### Version 2.0
-- [x] Product-detail page on the shopping application (with CMS-kit integration for comments and rating components) ✔️
-- [x] Switch to Keycloak from IdentityServer in AuthServer
-- [ ] Re-design authorization/permission management
-- [ ] Integrate a new sample microservice written in GoLang (Or python/java)
-### Documentation
-
-- [ ] We will create an e-book to explain the solution
-
-## Current Architecture
-
-![eSopOnAbp Phase 1](/docs/roadmap/Phase_1.png)
-
-## ABP Community Talks
-
-We've organized a meetup related to this solution. You can watch it here: https://community.abp.io/events/microservice-development-iv7d46ov

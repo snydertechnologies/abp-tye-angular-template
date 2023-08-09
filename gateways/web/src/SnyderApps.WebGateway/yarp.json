@@ -1,0 +1,21 @@
+﻿{
+  "ReverseProxy": {
+    "Routes": {
+      "Base Route": {
+        "ClusterId": "baseService",
+        "Match": {
+          "Path": "/base/{**everything}"
+        }
+      }
+    },
+    "Clusters": {
+      "baseService": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://base-service"
+          }
+        }
+      }
+    }
+  }
+}
